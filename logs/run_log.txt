@@ -1,0 +1,36 @@
+=== run 2026-11-13 19:55:11 - FAILED ===
+Loaded 22 order rows from 4 files, 9 customers
+Removed 1 exact duplicate(s): 22 -> 21 rows
+Converted 3 March price(s) from cents to EUR
+Fixed C007.country: 'Germny' -> 'Austria' (typo; city Vienna and .at email -> Austria)
+Fixed C003.email: 'clara.schmidt(at)web.de' -> 'clara.schmidt@web.de' ('(at)' written instead of '@')
+VALIDATION FAILED - pipeline stopped, no outputs written:
+    column                                check failure_case  index
+  order_id                     field_uniqueness         O101      0
+  order_id                     field_uniqueness         O101     19
+  order_id          str_matches('^[A-Z]\d{3}$')        A1001     20
+  category isin(['Accessories', 'Electronics'])      Gadgets     20
+unit_price          greater_than_or_equal_to(0)         -5.0     21
+
+=== run 2026-11-13 19:55:12 - SUCCESS ===
+Loaded 17 order rows from 3 files, 9 customers
+Removed 1 exact duplicate(s): 17 -> 16 rows
+Converted 3 March price(s) from cents to EUR
+Fixed C007.country: 'Germny' -> 'Austria' (typo; city Vienna and .at email -> Austria)
+Fixed C003.email: 'clara.schmidt(at)web.de' -> 'clara.schmidt@web.de' ('(at)' written instead of '@')
+Validation passed: all critical rules OK
+Split: 12 trusted, 4 quarantined
+Revenue: EUR 4,015
+Wrote fct_orders.csv, quarantine_orders.csv, revenue_by_city.csv, revenue_by_category.csv
+
+=== run 2026-11-13 19:55:12 - SUCCESS ===
+Loaded 17 order rows from 3 files, 9 customers
+Removed 1 exact duplicate(s): 17 -> 16 rows
+Converted 3 March price(s) from cents to EUR
+Fixed C007.country: 'Germny' -> 'Austria' (typo; city Vienna and .at email -> Austria)
+Fixed C003.email: 'clara.schmidt(at)web.de' -> 'clara.schmidt@web.de' ('(at)' written instead of '@')
+Validation passed: all critical rules OK
+Split: 12 trusted, 4 quarantined
+Revenue: EUR 4,015
+Wrote fct_orders.csv, quarantine_orders.csv, revenue_by_city.csv, revenue_by_category.csv
+
